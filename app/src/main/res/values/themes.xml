@@ -3,6 +3,7 @@
     <style name="Base.Theme.Aplikasi_Ecommerce" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimaryDark">@color/green</item>
     </style>
 
     <style name="Theme.Aplikasi_Ecommerce" parent="Base.Theme.Aplikasi_Ecommerce" />
