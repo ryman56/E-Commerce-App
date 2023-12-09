@@ -44,4 +44,5 @@ dependencies {
     implementation ("androidx.appcompat:appcompat:1.0.2")
     implementation ("androidx.constraintlayout:constraintlayout:1.1.3")
     implementation ("com.google.android.material:material:1.2.0-alpha04")
+    implementation ("com.google.code.gson:gson:2.9.1")
 }

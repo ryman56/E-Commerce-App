@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         ArrayList<PopularDomain> items=new ArrayList<>();
-        items.add(new PopularDomain("T-Shirt Black","Lorem Ipsum Dolor sit met","pic1",15,4,500));
-        items.add(new PopularDomain("Smart Watch","Lorem Ipsum Dolor sit met","pic2",10,4.5,450));
-        items.add(new PopularDomain("Iphone 14","Lorem Ipsum Dolor sit met","pic3",15,4.3,800));
-        items.add(new PopularDomain("VisionX pro LED TV","Lorem Ipsum Dolor sit met","pic4",18,4.0,1500));
+        items.add(new PopularDomain("T-Shirt Black","Lorem Ipsum Dolor sit met","item_1",15,4,500));
+        items.add(new PopularDomain("Smart Watch","Lorem Ipsum Dolor sit met","item_2",10,4.5,450));
+        items.add(new PopularDomain("Iphone 14","Lorem Ipsum Dolor sit met","item_3",15,4.3,800));
+        items.add(new PopularDomain("VisionX pro LED TV","Lorem Ipsum Dolor sit met","item_4",18,4.0,1500));
 
         recyclerViewPopular=findViewById(R.id.view1);
         recyclerViewPopular.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));

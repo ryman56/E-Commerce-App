@@ -1,6 +1,7 @@
 package com.example.aplikasi_ecommerce.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners;
+import com.example.aplikasi_ecommerce.Activity.DetailActivity;
 import com.example.aplikasi_ecommerce.Domain.PopularDomain;
 import com.example.aplikasi_ecommerce.R;
 
@@ -47,11 +49,16 @@ Glide.with(holder.itemView.getContext())
         .load(drawableResourceId)
         .transform(new GranularRoundedCorners(30,30,0,0))
         .into(holder.pic);
+holder.itemView.setOnClickListener(v -> {
+    Intent intent=new Intent(holder.itemView.getContext(), DetailActivity.class);
+    intent.putExtra("object",items.get(position));
+    holder.itemView.getContext().startActivity(intent);
+});
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return items.size();
     }
 
     public class Viewholder extends RecyclerView.ViewHolder {
