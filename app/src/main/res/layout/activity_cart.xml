@@ -6,9 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Activity.CartActivity">
 
+    <TextView
+        android:id="@+id/emptyTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Cart is Empty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/scrollview2"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:id="@+id/scrollview2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,15 +46,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="My Cart"
                     android:gravity="center"
+                    android:text="My Cart"
                     android:textColor="@color/black"
                     android:textSize="25dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -50,11 +63,11 @@
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="Order Summary"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:layout_marginTop="16dp"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -167,11 +180,11 @@
                 android:id="@+id/textView25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Information"
                 android:layout_marginTop="16dp"
+                android:text="Information"
+                android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textStyle="bold" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -270,13 +283,13 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button"
                 style="@android:style/Widget.Button"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/green_btn"
-                android:textColor="@color/white"
-                android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Order Now" />
+                android:layout_marginTop="16dp"
+                android:background="@drawable/green_btn"
+                android:text="Order Now"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
 
         </LinearLayout>

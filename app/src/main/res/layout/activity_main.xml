@@ -342,6 +342,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/homeBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.25"
@@ -391,6 +392,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/cartBtn"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.25"

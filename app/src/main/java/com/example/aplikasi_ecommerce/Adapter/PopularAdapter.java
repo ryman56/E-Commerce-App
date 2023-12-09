@@ -24,36 +24,37 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.Viewhold
     ArrayList<PopularDomain> items;
 
 
-
     Context context;
+
     public PopularAdapter(ArrayList<PopularDomain> items) {
         this.items = items;
     }
+
     @NonNull
     @Override
     public PopularAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        context=parent.getContext();
-        View inflate= LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_pup_list,parent,false);
+        context = parent.getContext();
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_pup_list, parent, false);
         return new Viewholder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PopularAdapter.Viewholder holder, int position) {
-holder.titleTxt.setText(items.get(position).getTitle());
-holder.feeTxt.setText("$"+items.get(position).getPrice());
-holder.scoreTxt.setText(""+items.get(position).getScore());
+        holder.titleTxt.setText(items.get(position).getTitle());
+        holder.feeTxt.setText("$" + items.get(position).getPrice());
+        holder.scoreTxt.setText("" + items.get(position).getScore());
 
-int drawableResourceId=holder.itemView.getResources().getIdentifier(items.get(position).getPicUrl(),
-        "drawable", holder.itemView.getContext().getPackageName());
-Glide.with(holder.itemView.getContext())
-        .load(drawableResourceId)
-        .transform(new GranularRoundedCorners(30,30,0,0))
-        .into(holder.pic);
-holder.itemView.setOnClickListener(v -> {
-    Intent intent=new Intent(holder.itemView.getContext(), DetailActivity.class);
-    intent.putExtra("object",items.get(position));
-    holder.itemView.getContext().startActivity(intent);
-});
+        int drawableResourceId = holder.itemView.getResources().getIdentifier(items.get(position).getPicUrl(),
+                "drawable", holder.itemView.getContext().getPackageName());
+        Glide.with(holder.itemView.getContext())
+                .load(drawableResourceId)
+                .transform(new GranularRoundedCorners(30, 30, 0, 0))
+                .into(holder.pic);
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
+            intent.putExtra("object", items.get(position));
+            holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override
@@ -67,10 +68,10 @@ holder.itemView.setOnClickListener(v -> {
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-            titleTxt=itemView.findViewById(R.id.titleTxt);
-            feeTxt=itemView.findViewById(R.id.feeTxt);
-            scoreTxt=itemView.findViewById(R.id.scoreTxt);
-            pic=itemView.findViewById(R.id.p);
+            titleTxt = itemView.findViewById(R.id.titleTxt);
+            feeTxt = itemView.findViewById(R.id.feeTxt);
+            scoreTxt = itemView.findViewById(R.id.scoreTxt);
+            pic = itemView.findViewById(R.id.p);
         }
     }
 }
