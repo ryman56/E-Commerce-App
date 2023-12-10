@@ -16,10 +16,10 @@ import com.bumptech.glide.Glide;
 public class DetailActivity extends AppCompatActivity {
 
     public Button addToCartButton;
-    public TextView titleTxt, feeTxt, descTxt, reviewTxt, scoreTxt;
+    public TextView titleTxt, priceTxt, descTxt, reviewTxt, scoreTxt, stockTxt;
     public ImageView picItem, backBtn;
     private PopularDomain object;
-    private int numberOrder=1;
+    private final int numberOrder = 1;
     private ManagementCart managementCart;
 
     @Override
@@ -33,13 +33,14 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initView() {
         addToCartButton = findViewById(R.id.addToCartBtn);
-        feeTxt = findViewById(R.id.feeTxt);
+        priceTxt = findViewById(R.id.priceTxt);
         titleTxt = findViewById(R.id.titleTxt);
         descTxt = findViewById(R.id.descTxt);
         picItem = findViewById(R.id.itemPic);
         reviewTxt = findViewById(R.id.reviewTxt);
         scoreTxt = findViewById(R.id.scoreTxt);
         backBtn = findViewById(R.id.backBtn);
+        stockTxt = findViewById(R.id.stockTxt);
     }
 
     private void getBundle() {
@@ -52,10 +53,11 @@ public class DetailActivity extends AppCompatActivity {
                     .into(picItem);
 
             if (titleTxt != null) titleTxt.setText(object.getTitle());
-            if (feeTxt != null) feeTxt.setText("$" + object.getPrice());
+            if (priceTxt != null) priceTxt.setText("Rp." + object.getPrice());
             if (descTxt != null) descTxt.setText(object.getDescription());
             if (reviewTxt != null) reviewTxt.setText(object.getReview() + "");
             if (scoreTxt != null) scoreTxt.setText(object.getScore() + "");
+            if (stockTxt != null) stockTxt.setText("Stock "+object.getStock());
 
             addToCartButton.setOnClickListener(v -> {
                 object.setNumberInCart(numberOrder);
@@ -66,5 +68,17 @@ public class DetailActivity extends AppCompatActivity {
         }
         backBtn.setOnClickListener(v -> finish());
     }
+    private String getType(Object value) {
+        if (value instanceof Integer) {
+            return "Integer";
+        } else if (value instanceof Double) {
+            return "Double";
+        } else if (value instanceof String) {
+            return "String";
+        } else {
+            return "Unknown Type";
+        }
+    }
 
 }
+

@@ -39,19 +39,19 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull CartAdapter.ViewHolder holder, int position) {
         PopularDomain item = listItemSelected.get(position);
-        if (item != null) {
+
             holder.title.setText(item.getTitle());
             holder.feeEachItem.setText("Rp. " + item.getPrice());
             holder.totalEachItem.setText("Rp. " + Math.round(item.getNumberInCart() * item.getPrice()));
             holder.num.setText(String.valueOf(item.getNumberInCart()));
-
+            holder.stockEachItem.setText("Stock "  + item.getStock());
             int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(item.getPicUrl(), "drawable", holder.itemView.getContext().getPackageName());
             Glide.with(holder.itemView.getContext())
                     .load(drawableResourceId)
                     .transform(new GranularRoundedCorners(30, 30, 30, 30))
                     .into(holder.pic);
 
-            // Plus and Minus button listeners
+
             holder.plusItem.setOnClickListener(v -> {
                 managementCart.plusNumberItem(listItemSelected, position, () -> {
                     notifyDataSetChanged();
@@ -66,7 +66,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                 });
             });
         }
-    }
+
 
     @Override
     public int getItemCount() {
@@ -74,7 +74,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title, feeEachItem, totalEachItem, num, plusItem, minusItem;
+        TextView title, feeEachItem, totalEachItem, num, plusItem, minusItem, stockEachItem;
         ImageView pic;
 
         public ViewHolder(@NonNull View itemView) {
@@ -86,6 +86,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             num = itemView.findViewById(R.id.numberItemTxt);
             plusItem = itemView.findViewById(R.id.plusCartBtn);
             minusItem = itemView.findViewById(R.id.minusCartBtn);
+            stockEachItem = itemView.findViewById(R.id.stockEachItem);
+
         }
     }
 }

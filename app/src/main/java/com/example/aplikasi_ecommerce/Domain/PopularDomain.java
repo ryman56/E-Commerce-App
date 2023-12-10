@@ -12,7 +12,6 @@ public class PopularDomain implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-
     public String getDescription() {
         return description;
     }
@@ -45,6 +44,14 @@ public class PopularDomain implements Serializable {
         this.score = score;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
     public int getNumberInCart() {
         return numberInCart;
     }
@@ -61,7 +68,10 @@ public class PopularDomain implements Serializable {
         this.price = price;
     }
 
+
+
     private  String title;
+    private  int stock;
     private  String description;
     private String picUrl;
 
@@ -70,7 +80,7 @@ public class PopularDomain implements Serializable {
     private int numberInCart;
     private double price;
 
-    public PopularDomain(String title, String description, String picUrl, int review, double score, double price) {
+    public PopularDomain(String title, String description, String picUrl, int review, double score, double price, int stock ) {
         this.title = title;
         this.description = description;
         this.picUrl = picUrl;
@@ -78,6 +88,7 @@ public class PopularDomain implements Serializable {
         this.score = score;
         this.numberInCart = 1;
         this.price = price;
+        this.stock = stock;
     }
 
 }

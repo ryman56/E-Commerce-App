@@ -96,10 +96,11 @@
                     android:id="@+id/priceTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$10"
+                    android:text="Rp.10"
                     android:textColor="@color/black"
                     android:textSize="22sp"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -155,12 +156,21 @@
                 android:textStyle="bold"/>
 
             <TextView
+
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:text="Reviews"
-                android:textColor="@color/black"
-                android:layout_marginStart="8dp"/>
+                android:textColor="@color/black" />
+
+            <TextView
+                android:textAlignment="textEnd"
+                android:id="@+id/stockTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stock 30"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <View
