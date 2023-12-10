@@ -76,7 +76,8 @@ public class PopularDomain implements Serializable {
         this.picUrl = picUrl;
         this.review = review;
         this.score = score;
-        this.numberInCart = numberInCart;
+        this.numberInCart = 1;
         this.price = price;
     }
+
 }

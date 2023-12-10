@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="70dp"
+    android:paddingBottom="0dp"
     tools:context=".Activity.MainActivity">
 
     <ScrollView
@@ -47,11 +47,14 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
                         android:text="Rafly Rangghani Putra"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        tools:layout_editor_absoluteX="0dp"
-                        tools:layout_editor_absoluteY="19dp" />
+                        app:layout_constraintEnd_toStartOf="@+id/imageView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                     <ImageView
                         android:id="@+id/imageView"
@@ -179,14 +182,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageView4a"
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_gravity="center"
                         android:src="@drawable/cat1" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/textView8a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -202,14 +205,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageView4b"
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_gravity="center"
                         android:src="@drawable/cat2" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/textView8b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -225,14 +228,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageView4c"
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_gravity="center"
                         android:src="@drawable/cat3" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/textView8c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -248,14 +251,14 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/imageView4d"
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_gravity="center"
                         android:src="@drawable/cat4" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/textView8d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -326,7 +329,7 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="1000dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -349,7 +352,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/imageView5a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -359,7 +362,7 @@
                         android:src="@drawable/btn_1" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/textView10a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Explorer"
@@ -374,7 +377,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/imageView5b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -384,7 +387,7 @@
                         android:src="@drawable/btn_2" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/textView10b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Wishlist"
@@ -399,7 +402,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/imageView5c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -409,7 +412,7 @@
                         android:src="@drawable/btn_3" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/textView10c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cart"
@@ -423,7 +426,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/imageView5d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -433,7 +436,7 @@
                         android:src="@drawable/btn_4" />
 
                     <TextView
-                        android:id="@+id/textView10"
+                        android:id="@+id/textView10d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Profile"
