@@ -68,17 +68,7 @@ public class DetailActivity extends AppCompatActivity {
         }
         backBtn.setOnClickListener(v -> finish());
     }
-    private String getType(Object value) {
-        if (value instanceof Integer) {
-            return "Integer";
-        } else if (value instanceof Double) {
-            return "Double";
-        } else if (value instanceof String) {
-            return "String";
-        } else {
-            return "Unknown Type";
-        }
-    }
+
 
 }
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,8 +37,18 @@ public class CartActivity extends AppCompatActivity {
         setVariable();
         calculatorCart();
         initList();
-    }
 
+        bottomNavigation();
+    }
+    private void bottomNavigation() {
+        LinearLayout homeBtn=findViewById(R.id.homeBtn);
+        LinearLayout cartBtn=findViewById(R.id.cartBtn);
+        LinearLayout profileBtn=findViewById(R.id.profileBtn);
+
+        homeBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, MainActivity.class)));
+        cartBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, CartActivity.class)));
+        profileBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, ProfileActivity.class)));
+    }
     private void initList() {
         if(managementCart.getListCart().isEmpty()){
             emptyTxt.setVisibility(View.VISIBLE);
