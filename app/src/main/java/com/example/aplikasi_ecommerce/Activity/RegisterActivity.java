@@ -1,7 +1,6 @@
 package com.example.aplikasi_ecommerce.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.aplikasi_ecommerce.Helper.TinyDB;
 import com.example.aplikasi_ecommerce.R;
 
@@ -51,6 +49,8 @@ public class RegisterActivity extends AppCompatActivity {
                 if (isValidRegistration(username, email, password)) {
                     saveRegistrationInfo(username, email, password);
                     Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(RegisterActivity.this, "Invalid registration information", Toast.LENGTH_SHORT).show();
                 }
@@ -59,14 +59,21 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean isValidRegistration(String username, String email, String password) {
-        return !TextUtils.isEmpty(username) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password);
+        String existingEmail = tinyDB.getString(email + "_email");
+        if (!TextUtils.isEmpty(existingEmail)) {
+            Toast.makeText(RegisterActivity.this, "Email already exists. Please use a different email.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password);
     }
 
     private void saveRegistrationInfo(String username, String email, String password) {
-        // Simpan informasi registrasi ke TinyDB atau SharedPreferences
-        tinyDB.putString("username", username);
-        tinyDB.putString("email", email);
-        // PENTING: Jangan simpan password secara langsung, gunakan praktik aman seperti enkripsi atau hashing
-        tinyDB.putString("password", password); // Ini hanya contoh sederhana, seharusnya tidak dilakukan secara langsung
+        if (!isValidRegistration(username, email, password)) {
+            return;
+        }
+        tinyDB.putString(email + "_email", email);
+        tinyDB.putString(email + "_username", username);
+        tinyDB.putString(email + "_password", password);
+        Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
     }
 }

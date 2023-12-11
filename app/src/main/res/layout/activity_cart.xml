@@ -381,7 +381,7 @@
                         android:layout_margin="4dp"
                         android:layout_weight="1"
                         android:padding="6dp"
-                        android:src="@drawable/btn_3"
+                        android:src="@drawable/btn_3_green"
                         />
 
                     <TextView

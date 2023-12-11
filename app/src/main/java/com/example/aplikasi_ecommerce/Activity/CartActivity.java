@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.aplikasi_ecommerce.Adapter.CartAdapter;
 import com.example.aplikasi_ecommerce.Helper.ManagementCart;
@@ -25,12 +26,18 @@ public class CartActivity extends AppCompatActivity {
     private double tax;
     private ScrollView scrollView;
     private ImageView backBtn;
+    private String username;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-
+        Intent intent = getIntent();
+        if (intent != null) {
+            username = intent.getStringExtra("USERNAME");
+            email = intent.getStringExtra("EMAIL");
+        }
         managementCart=new ManagementCart(this);
 
         initView();
@@ -45,9 +52,24 @@ public class CartActivity extends AppCompatActivity {
         LinearLayout cartBtn=findViewById(R.id.cartBtn);
         LinearLayout profileBtn=findViewById(R.id.profileBtn);
 
-        homeBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, MainActivity.class)));
-        cartBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, CartActivity.class)));
-        profileBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this, ProfileActivity.class)));
+        homeBtn.setOnClickListener(v ->{
+            Intent intent = new Intent(CartActivity.this, MainActivity.class);
+            intent.putExtra("USERNAME", username);
+            intent.putExtra("EMAIL", email);
+            startActivity(intent);
+        });
+        cartBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(CartActivity.this, CartActivity.class);
+            intent.putExtra("USERNAME", username);
+            intent.putExtra("EMAIL", email);
+            startActivity(intent);
+        });
+        profileBtn.setOnClickListener(v ->{
+            Intent intent = new Intent(CartActivity.this, ProfileActivity.class);
+            intent.putExtra("USERNAME", username);
+            intent.putExtra("EMAIL", email);
+            startActivity(intent);
+        });
     }
     private void initList() {
         if(managementCart.getListCart().isEmpty()){

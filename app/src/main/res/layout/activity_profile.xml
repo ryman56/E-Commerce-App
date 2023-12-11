@@ -9,23 +9,116 @@
     <ImageView
         android:id="@+id/bg"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="272dp"
         android:src="@drawable/top_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ini Profile"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Profile"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <TextView
+        android:id="@+id/tv_changePassword"
+        android:layout_width="358dp"
+        android:layout_height="58dp"
+        android:background="@drawable/outline_box"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="20dp"
+        android:gravity="fill"
+        android:paddingStart="20dp"
+        android:text="Change Password"
+        android:textColor="@color/green"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <TextView
+        android:id="@+id/tv_signOut"
+        android:layout_width="358dp"
+        android:layout_height="58dp"
+        android:background="@drawable/outline_box"
+        android:drawableLeft="@drawable/exit"
+        android:drawablePadding="20dp"
+        android:gravity="fill"
+        android:paddingStart="20dp"
+        android:text="Sign Out"
+        android:textColor="#FF2F2F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_changePassword"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <TextView
+        android:id="@+id/tv_nama_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rafly Ranghani Putra"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_email_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.735" />
+
+    <TextView
+        android:id="@+id/tv_email_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Rafly123@gmail.com"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/account_circle_filled_24px"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/bg"
+        app:layout_constraintVertical_bias="0.449" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_Profile"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Ini Profile"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,15 +152,14 @@
                         android:layout_margin="4dp"
                         android:layout_weight="1"
                         android:padding="6dp"
-                        android:src="@drawable/btn_1" />
+                        android:src="@drawable/btn_1_grey" />
 
                     <TextView
                         android:id="@+id/textView10a"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Explorer"
-                        android:textAlignment="center"
-                        />
+                        android:textAlignment="center" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -134,15 +226,15 @@
                         android:layout_margin="4dp"
                         android:layout_weight="1"
                         android:padding="6dp"
-                        android:src="@drawable/btn_4" />
+                        android:src="@drawable/btn_4_green" />
 
                     <TextView
                         android:id="@+id/textView10d"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Profile"
-                        android:textColor="@color/green"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/green" />
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>

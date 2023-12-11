@@ -21,19 +21,21 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapterPopular;
     private  RecyclerView recyclerViewPopular;
-
+    private String email;
+    private String username;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("loginPrefs", MODE_PRIVATE);
-        String savedUsername = sharedPreferences.getString("username", "");
-        String savedPassword = sharedPreferences.getString("password", "");
-//        Toast.makeText(MainActivity.this, savedUsername , Toast.LENGTH_SHORT).show();
-        TextView usernameTextView = findViewById(R.id.textView2);
-        usernameTextView.setText(savedUsername);
+        Intent intent = getIntent();
+        if (intent != null) {
+            username = intent.getStringExtra("USERNAME");
+            email = intent.getStringExtra("EMAIL");
+            TextView usernameTextView = findViewById(R.id.textView2);
+            usernameTextView.setText(username);
+        }
         initRecyclerView();
         bottomNavigation();
 
@@ -44,10 +46,26 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout cartBtn=findViewById(R.id.cartBtn);
         LinearLayout profileBtn=findViewById(R.id.profileBtn);
 
-        homeBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, MainActivity.class)));
-        cartBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CartActivity.class)));
-        profileBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ProfileActivity.class)));
+        homeBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            intent.putExtra("USERNAME", username);
+            intent.putExtra("EMAIL", email);
+            startActivity(intent);
+        });
+        cartBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CartActivity.class);
+            intent.putExtra("USERNAME", username);
+            intent.putExtra("EMAIL", email);
+            startActivity(intent);
+        });
+        profileBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+            intent.putExtra("USERNAME", username);
+            intent.putExtra("EMAIL", email);
+            startActivity(intent);
+        });
     }
+
 
     private void initRecyclerView() {
         ArrayList<PopularDomain> items=new ArrayList<>();
