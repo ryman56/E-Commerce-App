@@ -34,6 +34,7 @@
         android:layout_height="58dp"
         android:background="@drawable/outline_box"
         android:drawableLeft="@drawable/lock"
+
         android:drawablePadding="20dp"
         android:gravity="fill"
         android:paddingStart="20dp"

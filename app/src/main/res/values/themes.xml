@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Aplikasi_Ecommerce" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+<!--        <item name="android:windowAnimationStyle">@style/NoAnimation</item>-->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimaryDark">@color/green</item>
     </style>
@@ -16,4 +17,12 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="NoAnimation">
+        <item name="android:activityOpenEnterAnimation">@null</item>
+        <item name="android:activityOpenExitAnimation">@null</item>
+        <item name="android:activityCloseEnterAnimation">@null</item>
+        <item name="android:activityCloseExitAnimation">@null</item>
+    </style>
+
 </resources>
