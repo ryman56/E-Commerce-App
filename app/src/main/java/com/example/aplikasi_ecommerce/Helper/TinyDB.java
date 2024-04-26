@@ -543,16 +543,6 @@ public class TinyDB {
         preferences.registerOnSharedPreferenceChangeListener(listener);
     }
 
-    /**
-     * Unregister SharedPreferences change listener
-     * @param listener listener object of OnSharedPreferenceChangeListener to be unregistered
-     */
-    public void unregisterOnSharedPreferenceChangeListener(
-            SharedPreferences.OnSharedPreferenceChangeListener listener) {
-
-        preferences.unregisterOnSharedPreferenceChangeListener(listener);
-    }
-
 
     /**
      * Check if external storage is writable or not
