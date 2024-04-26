@@ -1,3 +1,5 @@
+
+
 plugins {
     id("com.android.application")
 }
@@ -29,7 +31,22 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-}
+    android {
+        lintOptions {
+            // Enable lint checks during compilation for release builds
+            isCheckReleaseBuilds = true
+
+            // Enable checking for all lint issues
+            isCheckAllWarnings = true
+
+            // Exclude lint checks for unchecked operations and deprecated APIs
+            disable("Unchecked", "Deprecated")
+        }
+  }}
+
+
+
+
 
 dependencies {
 
