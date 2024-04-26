@@ -98,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Rp. "
+                    android:text="ksh. "
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -118,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Rp. "
+                    android:text="ksh. "
                     app:layout_constraintEnd_toEndOf="@+id/totalFeeTxt"
                     app:layout_constraintTop_toBottomOf="@+id/totalFeeTxt" />
 
@@ -138,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Rp. "
+                    android:text="ksh. "
                     app:layout_constraintEnd_toEndOf="@+id/deliveryTxt"
                     app:layout_constraintTop_toBottomOf="@+id/deliveryTxt" />
 
@@ -172,7 +172,7 @@
                     style="@style/textStyleBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rp. "
+                    android:text="ksh. "
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/textView21"
                     app:layout_constraintEnd_toEndOf="@+id/taxTxt"
@@ -220,7 +220,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Jakarta Timur"
+                    android:text=",Kisumu, Maseno"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView9"
                     app:layout_constraintStart_toEndOf="@+id/imageView9"
                     app:layout_constraintTop_toTopOf="@+id/imageView9" />
